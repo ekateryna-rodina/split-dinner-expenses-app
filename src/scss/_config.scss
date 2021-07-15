@@ -1,0 +1,102 @@
+$primary-color: hsl(172, 67%, 45%);
+$white-color: hsl(0, 0%, 100%);
+$medium-color: hsl(189, 41%, 47%);
+$light-grayish-cyan-color: hsl(189, 41%, 97%);
+$lighter-grayish-cyan-color: hsl(185, 41%, 84%);
+$dark-grayish-cyan: hsl(184, 14%, 56%);
+$darker-grayish-cyan: hsl(186, 14%, 43%);
+$darkest-cyan-color: hsl(183, 100%, 15%);
+
+// TYPOGRAPHY
+$font-stack: "Space Mono", monospace;
+.font-md {
+  font-weight: 500;
+}
+.font-bold {
+  font-weight: 600;
+}
+
+// BORDER RADIUS
+.br-lg-top {
+  border-radius: 1rem 1rem 0 0;
+  -webkit-border-radius: 1rem 1rem 0 0;
+  -moz-border-radius: 1rem 1rem 0 0;
+  -ms-border-radius: 1rem 1rem 0 0;
+  -o-border-radius: 1rem 1rem 0 0;
+}
+
+.br-lg {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.br-sm {
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+// BACKGROUND COLORS
+.bg-dark {
+  background-color: $darkest-cyan-color;
+}
+.bg-white {
+  background-color: $white-color;
+}
+.bg-light {
+  background-color: $light-grayish-cyan-color;
+}
+.bg-primary {
+  background-color: $primary-color;
+}
+
+// SET TEXT AND BG COLOR
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return $darkest-cyan-color;
+  } @else {
+    @return $white-color;
+  }
+}
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// MARGIN AND PADDING
+$spaceamounts: (0, 1, 2, 3);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .m-top-#{$space} {
+    margin-top: #{$space}rem;
+  }
+
+  .m-bottom-#{$space} {
+    margin-bottom: #{$space}rem;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+}
