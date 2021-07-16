@@ -57,7 +57,7 @@ $font-stack: "Space Mono", monospace;
 
 // SET TEXT AND BG COLOR
 @function set-text-color($color) {
-  @if (lightness($color) > 60) {
+  @if (lightness($color) > 40) {
     @return $darkest-cyan-color;
   } @else {
     @return $white-color;

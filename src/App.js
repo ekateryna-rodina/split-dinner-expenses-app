@@ -1,6 +1,9 @@
 import React from "react";
 import BillInput from "./components/BillInput";
 import NumberOfPeopleInput from "./components/NumberOfPeopleInput";
+import TipAmount from "./components/TipAmount";
+import TotalAmount from "./components/TotalAmount";
+import Reset from "./components/Reset";
 function App() {
   const tips = ["5%", "10%", "15%", "25%", "50%", "Custom"];
   return (
@@ -18,12 +21,27 @@ function App() {
         <BillInput />
         <span>Select Tip %</span>
         <div className="tip-container">
-          {tips.map((t) => (
-            <div className="tip-button">{t}</div>
-          ))}
+          {tips.map((t, i) => {
+            if (t === "Custom") {
+              return (
+                <input key={t} className="tip-box input dollar-icon"></input>
+              );
+            } else {
+              return (
+                <div key={t} className="tip-box button">
+                  {t}
+                </div>
+              );
+            }
+          })}
         </div>
         <span>Number of People</span>
         <NumberOfPeopleInput />
+        <div className="result-container">
+          <TipAmount />
+          <TotalAmount />
+          <Reset />
+        </div>
       </div>
     </div>
   );
