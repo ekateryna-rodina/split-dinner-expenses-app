@@ -23,6 +23,15 @@ $font-stack: "Space Mono", monospace;
   -moz-border-radius: 1rem 1rem 0 0;
   -ms-border-radius: 1rem 1rem 0 0;
   -o-border-radius: 1rem 1rem 0 0;
+  -webkit-border-radius: 1rem 1rem 0 0;
+}
+
+.br-lg-bottom {
+  border-radius: 0 0 1rem 1rem;
+  -webkit-border-radius: 0 0 1rem 1rem;
+  -moz-border-radius: 0 0 1rem 1rem;
+  -ms-border-radius: 0 0 1rem 1rem;
+  -o-border-radius: 0 0 1rem 1rem;
 }
 
 .br-lg {

@@ -3,7 +3,10 @@ import Amount from './Amount';
 
 
 const TipAmount = () => {
-    return <Amount />
+    return (<div className="m-top-1">
+        <Amount />
+    </div>)
+    
 }
 
 export default TipAmount
