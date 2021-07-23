@@ -1,11 +1,16 @@
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const Reset = () => {
+const Reset = (props) => {
+    const {onReset} = props
     return (
-        <button type="button" className='reset-button'>
+        <button type="button" className='reset-button' onClick={onReset}>
             RESET
         </button>
     )
 }
 
+Reset.propTypes = {
+    onReset: PropTypes.func
+}
 export default Reset

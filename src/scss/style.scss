@@ -104,11 +104,16 @@ body {
       margin-bottom: 0.5rem;
       @extend .font-bold;
       @extend .br-sm;
+
       &.button {
         text-align: center;
         @include set-background($darkest-cyan-color);
         &.selected {
           @include set-background($primary-color);
+        }
+
+        &:hover {
+          cursor: pointer;
         }
       }
 
@@ -161,6 +166,10 @@ body {
       @extend .bg-primary;
       @extend .br-sm;
       @extend .font-bold;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
